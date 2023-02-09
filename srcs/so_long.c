@@ -21,6 +21,10 @@ int	main(int argc, char **argv)
 	{
 		ft_parse_arg(&g, argv[1]);
 		ft_init_struct(&g);
+		ft_print_infos(&g);
+		ft_put_img_map(&g);
+		ft_destroy_all_img(&g);
+		ft_free_tab(NULL, g->map.map);
 	}
 	else
 		ft_error(-1, NULL, NULL, ERR_BAD_ARG);

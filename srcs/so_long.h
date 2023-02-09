@@ -6,7 +6,7 @@
 /*   By: fgeorgea <fgeorgea@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 15:32:42 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/02/09 15:28:24 by fgeorgea         ###   ########.fr       */
+/*   Updated: 2023/02/09 15:52:58 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,4 +113,17 @@ void	ft_check_map(t_game *g);
 //PATH_FINDING.C
 int	ft_path_finding(t_game *g, int y, int x);
 void	ft_cp_map(t_game *g);
+
+//PRINT_STEPS_COINS.C
+void	ft_print_infos(t_game *g);
+
+// IMG.C
+void	ft_destroy_all_img(t_game *g);
+void	ft_put_img_map(t_game *g);
+void	ft_put_img(t_game *g, int x, int y, const char c);
+void	ft_init_img(t_game *g);
+
+//MLX_UTILS.C
+int	key_pressed(int keycode, t_game *g);
+int	red_cross(t_game *g);
 #endif

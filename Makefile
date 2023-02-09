@@ -6,7 +6,7 @@
 #    By: fgeorgea <fgeorgea@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/08 16:13:35 by fgeorgea          #+#    #+#              #
-#    Updated: 2023/02/09 15:24:48 by fgeorgea         ###   ########.fr        #
+#    Updated: 2023/02/09 15:52:19 by fgeorgea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,9 @@ SRC =	$(DIR)so_long.c \
 		$(DIR)map_utils.c \
 		$(DIR)parsing.c \
 		$(DIR)path_finding.c \
+		$(DIR)img.c \
+		$(DIR)print_steps_coins.c \
+		$(DIR)mlx_utils.c \
 
 OBJ = ${SRC:.c=.o}
 

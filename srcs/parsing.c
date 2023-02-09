@@ -6,7 +6,7 @@
 /*   By: fgeorgea <fgeorgea@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 17:30:58 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/02/09 15:03:18 by fgeorgea         ###   ########.fr       */
+/*   Updated: 2023/02/09 15:48:03 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	ft_init_lenline_nl(t_game *g)
 	empty = 1;
 	while (1)
 	{
+		str = get_next_line(fd);
 		if (!str && empty == 1)
 			ft_error(-1, NULL, NULL, ERR_EMPTY_MAP);
 		empty = 0;
