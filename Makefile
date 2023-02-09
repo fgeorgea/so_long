@@ -3,42 +3,52 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: fgeorgea <fgeorgea@student.s19be>          +#+  +:+       +#+         #
+#    By: fgeorgea <fgeorgea@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/02/06 14:44:40 by fgeorgea          #+#    #+#              #
-#    Updated: 2023/02/06 14:48:17 by fgeorgea         ###   ########.fr        #
+#    Created: 2023/02/08 16:13:35 by fgeorgea          #+#    #+#              #
+#    Updated: 2023/02/09 14:45:33 by fgeorgea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= so_long
-DIR		= srcs/
-MLX		= ./includes/mlx/libmlx.a
-CC		= gcc
-FLAGS	= -Wall -Werror -Wextra
-MFLAGS	= -L./includes/mlx -lmlx -framework OpenGL -framework AppKit
+NAME = so_long
 
-SRCS = main.c \
+DIR = srcs/
 
-OBJS = $(SRCS:.c=.o)
+SRC =	$(DIR)so_long.c \
+		$(DIR)utils.c \
 
-all: $(MLX) $(NAME)
+OBJ = ${SRC:.c=.o}
 
-$(MLX):
-	make -sC ./includes/mlx
+CFLAGS = -Wall -Werror -Wextra
 
-%.o: %.c
-	$(CC) $(FLAGS) -Imlx -c $< -o $@
+LIB  = ar rcs $(NAME) ./includes/mlx/libmlx.a ./includes/libft.a
 
-$(NAME): $(OBJS)
-	$(CC) $(FLAGS) $(MFLAGS) -o $(NAME) $(OBJS)
+REMOVE = rm -f
+
+DEPENDS = make -C includes/libft
+
+MLX = make -C includes/mlx
+
+COMPILE = gcc $(CFLAGS) -o $(NAME) -Iincludes/lib -Iincludes/mlx -Lincludes/mlx -Lincludes/Libft -lft -lmlx -framework OpenGL -framework Appkit -D BUFFER_SIZE=1
+
+all: $(NAME)
+
+libft : 
+	@$(DEPENDS)
+	@$(MLX)
+
+$(NAME): libft $(OBJ)
+	@$(COMPILE) $(OBJ)
 
 clean:
-	rm -f $(OBJS)
+	$(REMOVE) $(OBJ) 
+	make -C includes/Libft clean
+	make -C includes/mlx clean
 
-fclean: clean
-	rm -f $(NAME)
-	make clean -C ./includes/mlx
+fclean:	clean
+	$(REMOVE) $(NAME)
+	make -C includes/Libft fclean
 
 re: fclean all
 
-.PHONY:	all clean fclean re
+.PHONY: all clean fclean re
