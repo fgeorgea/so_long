@@ -6,7 +6,7 @@
 /*   By: fgeorgea <fgeorgea@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 15:59:48 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/02/09 14:02:39 by fgeorgea         ###   ########.fr       */
+/*   Updated: 2023/02/09 14:58:29 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,27 @@ void	ft_error(int res, char *tab1, char **tab2, char *error)
 	if (res < 0)
 	{
 		if (tab1)
-				//free tab1
+				ft_free_tab(tab1, NULL);
 		if (tab2)
-				//free tab2
+				ft_free_tab(NULL, tab2);
 		ft_putstr_fd("Error\n", 2);
 		ft_putstr_fd(error, 2);
 		exit(EXIT_FAILURE);
+	}
+}
+
+void	ft_free_tab(char *tab1, char **tab2)
+{
+	int	i;
+
+	i = -1;
+	if (tab1)
+		free(tab1);
+	if (tab2)
+	{
+		while (tab2[++i])
+			free(tab2[i]);
+		free(tab2);
 	}
 }
 

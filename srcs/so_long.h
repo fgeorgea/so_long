@@ -6,7 +6,7 @@
 /*   By: fgeorgea <fgeorgea@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 15:32:42 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/02/09 14:52:05 by fgeorgea         ###   ########.fr       */
+/*   Updated: 2023/02/09 15:28:24 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@
 # define ERR_PATH_FINDING "Unreachable exit or collectible\n"
 # define ERR_MLX_INIT "mlx_init error\n"
 # define ERR_MLX_WIN "mlx_new_window error\n"
-# define ERR_COIN_INT_MAX "Your numbers of coins exceed the int max\n"
+# define ERR_COIN_INT_MAX "There are more than INT MAX coins\n"
 # define ERR_MEMORY "No enough memory\n"
 # define ERR_EMPTY_MAP "The map is empty\n"
 
@@ -90,7 +90,6 @@ typedef struct s_game
 	char		*argv;
 	int			w_height;
 	int			w_width;
-	int			argv_malloc;
 	t_checkmap	check;
 	t_map		map;
 	t_player	player;
@@ -102,5 +101,16 @@ void	ft_check_ber_ext(char *argv);
 void    ft_error(int res, char *tab1, char **tab2, char *error);
 void    ft_path_map(char *dir, char *argv, t_game *g);
 void    ft_init_struct(t_game *g);
+void	ft_free_tab(char *tab1, char **tab2);
+
+// PARSING.C
 void	ft_init_lenline_nl(t_game *g);
+void	ft_parsing_map(t_game *g);
+
+//MAP_UTILS.C
+void	ft_check_map(t_game *g);
+
+//PATH_FINDING.C
+int	ft_path_finding(t_game *g, int y, int x);
+void	ft_cp_map(t_game *g);
 #endif

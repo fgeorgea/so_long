@@ -6,7 +6,7 @@
 #    By: fgeorgea <fgeorgea@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/08 16:13:35 by fgeorgea          #+#    #+#              #
-#    Updated: 2023/02/09 14:45:33 by fgeorgea         ###   ########.fr        #
+#    Updated: 2023/02/09 15:24:48 by fgeorgea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,9 @@ DIR = srcs/
 
 SRC =	$(DIR)so_long.c \
 		$(DIR)utils.c \
+		$(DIR)map_utils.c \
+		$(DIR)parsing.c \
+		$(DIR)path_finding.c \
 
 OBJ = ${SRC:.c=.o}
 

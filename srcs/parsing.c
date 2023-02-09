@@ -6,7 +6,7 @@
 /*   By: fgeorgea <fgeorgea@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 17:30:58 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/02/09 13:55:05 by fgeorgea         ###   ########.fr       */
+/*   Updated: 2023/02/09 15:03:18 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,4 @@ void	ft_parsing_map(t_game *g)
 		ft_error(fd, NULL, NULL, ERR_PATH);
 	ft_cut_parsing_map(fd, g);
 	close(fd);
-	if (g->argv_malloc == 1)
-		ft_free_tab(g->argv, NULL);
 }

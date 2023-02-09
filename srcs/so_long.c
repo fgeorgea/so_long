@@ -4,7 +4,6 @@ static void	ft_parse_arg(t_game *g, char *argv)
 {
 	if (ft_strncmp("maps/", argv, 5) == 0)
 	{
-		g->argv_malloc = 0;
 		g->argv = argv;
 		ft_check_ber_ext(g->argv);
 	}
