@@ -6,7 +6,7 @@
 /*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 15:54:26 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/03/06 16:13:00 by fgeorgea         ###   ########.fr       */
+/*   Updated: 2023/03/06 16:33:32 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ void	ft_display_imgs(t_game *g)
 void	ft_clear_imgs(t_game *g)
 {
 	if (g->img.wall)
-		mlx_destroy_image(g->mlx, g->img.coin);
+		mlx_destroy_image(g->mlx, g->img.wall);
 	if (g->img.floor)
 		mlx_destroy_image(g->mlx, g->img.floor);
 	if (g->img.player)

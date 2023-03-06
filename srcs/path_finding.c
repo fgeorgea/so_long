@@ -6,7 +6,7 @@
 /*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 15:54:05 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/03/01 11:53:35 by fgeorgea         ###   ########.fr       */
+/*   Updated: 2023/03/06 16:32:08 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_cp_map(t_game *g)
 	int		i;
 	int		j;
 
-	g->map.cp_map = malloc(sizeof(char *) * g->map.nl + 1);
+	g->map.cp_map = malloc(sizeof(char *) * (g->map.nl + 1));
 	if (!g->map.cp_map)
 		return ;
 	g->map.cp_map[g->map.nl] = NULL;

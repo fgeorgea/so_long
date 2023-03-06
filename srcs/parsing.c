@@ -6,7 +6,7 @@
 /*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 17:30:58 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/03/01 11:35:57 by fgeorgea         ###   ########.fr       */
+/*   Updated: 2023/03/06 16:31:32 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void	ft_parsing_map(t_game *g)
 {
 	int		fd;
 
-	g->map.map = malloc(sizeof(char *) * g->map.nl + 1);
+	g->map.map = malloc(sizeof(char *) * (g->map.nl + 1));
 	if (!g->map.map)
 		return ;
 	g->map.map[g->map.nl] = NULL;
