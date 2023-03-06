@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fgeorgea <fgeorgea@student.s19.be>         +#+  +:+       +#+        */
+/*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 17:30:58 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/02/09 15:48:03 by fgeorgea         ###   ########.fr       */
+/*   Updated: 2023/03/01 11:35:57 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	ft_init_lenline_nl(t_game *g)
+void	ft_init_len_nl(t_game *g)
 {
 	char	*str;
 	int		fd;
@@ -40,7 +40,7 @@ void	ft_init_lenline_nl(t_game *g)
 	close(fd);
 }
 
-static void	ft_cut_parsing_map(int fd, t_game *g)
+static void	ft_parsing_map_norm(int fd, t_game *g)
 {
 	char	*str;
 	int		i;
@@ -80,6 +80,6 @@ void	ft_parsing_map(t_game *g)
 	fd = open(g->argv, O_RDONLY);
 	if (fd < 0)
 		ft_error(fd, NULL, NULL, ERR_PATH);
-	ft_cut_parsing_map(fd, g);
+	ft_parsing_map_norm(fd, g);
 	close(fd);
 }

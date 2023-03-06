@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fgeorgea <fgeorgea@student.s19.be>         +#+  +:+       +#+        */
+/*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 15:59:48 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/02/09 14:58:29 by fgeorgea         ###   ########.fr       */
+/*   Updated: 2023/03/06 14:13:11 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,9 @@ void	ft_check_ber_ext(char *argv)
 
 void	ft_init_struct(t_game *g)
 {
-	ft_init_lenline_nl(g);
-	g->w_height = g->map.nl * 32;
-	g->w_width = (g->map.lenline - 1) * 32;
+	ft_init_len_nl(g);
+	g->w_height = g->map.nl * 128;
+	g->w_width = (g->map.lenline - 1) * 128;
 	g->mlx = mlx_init();
 	if (!g->mlx)
 		ft_error(-1, NULL, NULL, ERR_MLX_INIT);
@@ -64,14 +64,14 @@ void	ft_init_struct(t_game *g)
 		ft_error(-1, NULL, NULL, ERR_MLX_WIN);
 	g->player.pos_x = 0;
 	g->player.pos_y = 0;
-	g->player.coin_collected = 0;
+	g->player.coin_count = 0;
 	g->player.move = 0;
-	ft_parsing_map(g);
 	g->check.nbr_coin = 0;
 	g->check.nbr_player = 0;
 	g->check.nbr_exit = 0;
-	g->check.exit_pos_x = 0;
-	g->check.exit_pos_y = 0;
+	g->check.exit_x = 0;
+	g->check.exit_y = 0;
+	ft_parsing_map(g);
 	ft_check_map(g);
 	ft_init_img(g);
 }

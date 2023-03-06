@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   path_finding.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fgeorgea <fgeorgea@student.s19be>          +#+  +:+       +#+        */
+/*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 15:54:05 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/02/09 15:54:06 by fgeorgea         ###   ########.fr       */
+/*   Updated: 2023/03/01 11:53:35 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,14 +49,14 @@ int	ft_path_finding(t_game *g, int y, int x)
 	right = g->map.cp_map[y][x + 1];
 	if (g->map.cp_map[y][x] == 'C' || g->map.cp_map[y][x] == 'E')
 		g->check.total_obj--;
-	g->map.cp_map[y][x] = '9';
-	if (up != '1' && up != '9')
+	g->map.cp_map[y][x] = '2';
+	if (up != '1' && up != '2')
 		ft_path_finding(g, y - 1, x);
-	if (down != '1' && down != '9')
+	if (down != '1' && down != '2')
 		ft_path_finding(g, y + 1, x);
-	if (left != '1' && left != '9')
+	if (left != '1' && left != '2')
 		ft_path_finding(g, y, x - 1);
-	if (right != '1' && right != '9')
+	if (right != '1' && right != '2')
 		ft_path_finding(g, y, x + 1);
 	if (g->check.total_obj == 0)
 		return (0);
