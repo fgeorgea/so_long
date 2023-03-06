@@ -6,7 +6,7 @@
 /*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 15:53:46 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/03/06 14:10:17 by fgeorgea         ###   ########.fr       */
+/*   Updated: 2023/03/06 16:15:56 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	red_cross(t_game *g)
 
 int	key_pressed(int key, t_game *g)
 {
-	char *move;
+	char	*move;
 
 	if (key == KEY_ESC)
 		red_cross(g);

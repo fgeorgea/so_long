@@ -6,7 +6,7 @@
 /*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 15:32:42 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/03/06 14:10:32 by fgeorgea         ###   ########.fr       */
+/*   Updated: 2023/03/06 16:17:18 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,9 +109,9 @@ typedef struct s_game
 
 // UTILS.C
 void	ft_check_ber_ext(char *argv);
-void    ft_error(int res, char *tab1, char **tab2, char *error);
-void    ft_path_map(char *dir, char *argv, t_game *g);
-void    ft_init_struct(t_game *g);
+void	ft_error(int res, char *tab1, char **tab2, char *error);
+void	ft_path_map(char *dir, char *argv, t_game *g);
+void	ft_init_struct(t_game *g);
 void	ft_free_tab(char *tab1, char **tab2);
 
 // PARSING.C
@@ -126,8 +126,8 @@ int		ft_path_finding(t_game *g, int y, int x);
 void	ft_cp_map(t_game *g);
 
 //MLX_UTILS.C
-int	red_cross(t_game *g);
-int	key_pressed(int keycode, t_game *g);
+int		red_cross(t_game *g);
+int		key_pressed(int keycode, t_game *g);
 
 // MOVEMENT.C
 void	ft_movement(int key, t_game *g);

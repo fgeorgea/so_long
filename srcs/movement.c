@@ -6,7 +6,7 @@
 /*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 12:24:01 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/03/06 14:08:12 by fgeorgea         ###   ########.fr       */
+/*   Updated: 2023/03/06 16:15:15 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ static void	ft_exit_and_coin(t_game *g)
 		exit(EXIT_SUCCESS);
 	}
 }
-
 
 static void	ft_move_y(char key, t_game *g)
 {
@@ -50,7 +49,7 @@ static void	ft_move_y(char key, t_game *g)
 
 static void	ft_move_x(char key, t_game *g)
 {
-    if (key == 'L')
+	if (key == 'L')
 	{
 		g->player.pos_x--;
 		g->player.move++;
@@ -84,7 +83,7 @@ void	ft_movement(int key, t_game *g)
 	else if (g->map.map[g->player.pos_y + 1][g->player.pos_x] != '1'
 			&& (key == KEY_DOWN))
 		ft_move_y('D', g);
-        else if (g->map.map[g->player.pos_y][g->player.pos_x - 1] != '1'
+	else if (g->map.map[g->player.pos_y][g->player.pos_x - 1] != '1'
 			&& (key == KEY_LEFT))
 		ft_move_x('L', g);
 	else if (g->map.map[g->player.pos_y][g->player.pos_x + 1] != '1'
