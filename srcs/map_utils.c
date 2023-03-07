@@ -6,11 +6,34 @@
 /*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 15:53:59 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/03/07 13:49:38 by fgeorgea         ###   ########.fr       */
+/*   Updated: 2023/03/07 16:53:24 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+static void	ft_check_square(t_game *g)
+{
+	int		i;
+	int		j;
+	size_t	tmp;
+
+	i = 0;
+	j = 0;
+	tmp = ft_strlen(g->map.cp_map[i]);
+	while (g->map.cp_map[i])
+		i++;
+	i--;
+	if (ft_strlen(g->map.cp_map[i]) + 1 != tmp)
+		ft_error(-1, NULL, NULL, ERR_RECTANGLE);
+	i--;
+	while (i >= 0)
+	{
+		if (ft_strlen(g->map.cp_map[i]) != tmp)
+			ft_error(-1, NULL, NULL, ERR_RECTANGLE);
+			i--;
+	}
+}
 
 static void	ft_check_wall(t_game *g)
 {
@@ -44,6 +67,9 @@ static void	ft_err_check_map(t_game *g)
 		ft_error(-1, NULL, g->map.map, ERR_NBR_EXIT1);
 	else if (g->check.nbr_exit < 1)
 		ft_error(-1, NULL, g->map.map, ERR_NBR_EXIT2);
+	else if (g->check.nbr_coin == 0)
+		ft_error(-1, NULL, g->map.map, ERR_NBR_COIN);
+	ft_check_square(g);
 }
 
 static void	ft_init_pos_and_nbr_coins(t_game *g, char check, int x, int y)

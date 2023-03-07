@@ -6,7 +6,7 @@
 /*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 17:30:58 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/03/07 15:03:29 by fgeorgea         ###   ########.fr       */
+/*   Updated: 2023/03/07 16:49:08 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_init_len_nl(t_game *g)
 	while (1)
 	{
 		str = get_next_line(fd);
-		if (!str && empty == 1)
+		if ((str && str[0] == '\n') || (empty == 1 && !str))
 			ft_error(-1, NULL, NULL, ERR_EMPTY_MAP);
 		empty = 0;
 		if (g->map.lenline == 0)
@@ -54,7 +54,7 @@ static void	ft_parsing_map_norm(int fd, t_game *g)
 		j = -1;
 		if (!str)
 			break ;
-		g->map.map[i] = malloc(sizeof(char) * g->map.lenline + 1);
+		g->map.map[i] = malloc(sizeof(char) * (g->map.lenline + 1));
 		if (!g->map.map[i])
 			return ;
 		while (str[++j])

@@ -6,7 +6,7 @@
 /*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 15:32:42 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/03/07 15:03:07 by fgeorgea         ###   ########.fr       */
+/*   Updated: 2023/03/07 16:49:37 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,11 @@
 # define ERR_MLX_INIT "mlx_init error\n"
 # define ERR_MLX_WIN "mlx_new_window error\n"
 # define ERR_MEMORY "No enough memory\n"
-# define ERR_EMPTY_MAP "The map is empty\n"
+# define ERR_EMPTY_MAP "The map is empty or first line empty\n"
 # define ERR_TOO_BIG "The map is too big\n"
+# define ERR_FRST_LINE_EMPTY "First line is empty\n"
+# define ERR_NBR_COIN "Not enough coins\n"
+# define ERR_RECTANGLE "Map is not a rectangle\n"
 
 /*****************************************************************/
 /*							STRUCTS								 */
