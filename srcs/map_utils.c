@@ -6,7 +6,7 @@
 /*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 15:53:59 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/03/06 13:10:21 by fgeorgea         ###   ########.fr       */
+/*   Updated: 2023/03/07 13:49:38 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,6 @@ static void	ft_err_check_map(t_game *g)
 
 static void	ft_init_pos_and_nbr_coins(t_game *g, char check, int x, int y)
 {
-	if (g->check.nbr_coin > INT_MAX)
-		ft_error(-1, NULL, g->map.map, ERR_COIN_INT_MAX);
 	if (check == 'P')
 	{
 		g->check.nbr_player++;

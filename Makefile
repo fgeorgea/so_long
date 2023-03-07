@@ -6,7 +6,7 @@
 #    By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/08 16:13:35 by fgeorgea          #+#    #+#              #
-#    Updated: 2023/03/06 16:34:10 by fgeorgea         ###   ########.fr        #
+#    Updated: 2023/03/07 13:50:13 by fgeorgea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ SRC =	$(DIR)so_long.c \
 
 OBJ = ${SRC:.c=.o}
 
-CFLAGS = -Wall -Werror -Wextra -fsanitize=address -g
+CFLAGS = -Wall -Werror -Wextra
 
 LIB  = ar rcs $(NAME) ./includes/mlx/libmlx.a ./includes/libft.a
 

@@ -6,7 +6,7 @@
 /*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 15:54:26 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/03/06 16:33:32 by fgeorgea         ###   ########.fr       */
+/*   Updated: 2023/03/07 13:48:56 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,17 @@
 void	ft_init_img(t_game *g)
 {
 	g->img.wall = mlx_xpm_file_to_image(g->mlx, "./img/wall.xpm",
-			&g->img.img_width, &g->img.img_height);
+			&g->img.width, &g->img.height);
 	g->img.floor = mlx_xpm_file_to_image(g->mlx, "./img/grass.xpm",
-			&g->img.img_width, &g->img.img_height);
+			&g->img.width, &g->img.height);
 	g->img.player = mlx_xpm_file_to_image(g->mlx, "./img/donkeyKong.xpm",
-			&g->img.img_width, &g->img.img_height);
+			&g->img.width, &g->img.height);
 	g->img.coin = mlx_xpm_file_to_image(g->mlx, "./img/banana.xpm",
-			&g->img.img_width, &g->img.img_height);
+			&g->img.width, &g->img.height);
 	g->img.exit = mlx_xpm_file_to_image(g->mlx, "./img/exit.xpm",
-			&g->img.img_width, &g->img.img_height);
+			&g->img.width, &g->img.height);
 	g->img.player_exit = mlx_xpm_file_to_image(g->mlx, "./img/player_exit.xpm",
-			&g->img.img_width, &g->img.img_height);
+			&g->img.width, &g->img.height);
 	if (!g->img.wall || !g->img.floor || !g->img.player || !g->img.coin
 		|| !g->img.exit || !g->img.player_exit)
 	{

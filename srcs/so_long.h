@@ -6,14 +6,13 @@
 /*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 15:32:42 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/03/06 16:17:18 by fgeorgea         ###   ########.fr       */
+/*   Updated: 2023/03/07 13:48:15 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-# include <stdio.h> // GET RID OF THAT SHIT !!!!!
 # include "../includes/libft/libft.h"
 # include "../includes/mlx/mlx.h"
 # include <fcntl.h>
@@ -47,7 +46,6 @@
 # define ERR_PATH_FINDING "Game is not playable.\n"
 # define ERR_MLX_INIT "mlx_init error\n"
 # define ERR_MLX_WIN "mlx_new_window error\n"
-# define ERR_COIN_INT_MAX "There are more than INT MAX coins\n"
 # define ERR_MEMORY "No enough memory\n"
 # define ERR_EMPTY_MAP "The map is empty\n"
 
@@ -90,8 +88,8 @@ typedef struct s_img
 	void	*exit;
 	void	*player_exit;
 	void	*coin;
-	int		img_width;
-	int		img_height;
+	int		width;
+	int		height;
 }	t_img;
 
 typedef struct s_game
