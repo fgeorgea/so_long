@@ -6,7 +6,7 @@
 /*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 15:32:42 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/03/07 16:49:37 by fgeorgea         ###   ########.fr       */
+/*   Updated: 2023/03/07 17:40:30 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@
 # define KEY_PRESS 2
 # define KEY_RELEASE 3
 # define KEY_ESC 53
-# define KEY_UP 126
-# define KEY_DOWN 125
-# define KEY_LEFT 123
-# define KEY_RIGHT 124
+# define KEY_UP 13
+# define KEY_DOWN 1
+# define KEY_LEFT 0
+# define KEY_RIGHT 2
 
 /*****************************************************************/
 /*							ERROR MESSAGES					     */
@@ -103,6 +103,7 @@ typedef struct s_game
 	char		*argv;
 	int			w_height;
 	int			w_width;
+	int			tmp_press;
 	t_checkmap	check;
 	t_map		map;
 	t_player	player;
