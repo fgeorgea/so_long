@@ -6,7 +6,7 @@
 /*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 17:30:58 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/03/06 16:31:32 by fgeorgea         ###   ########.fr       */
+/*   Updated: 2023/03/07 15:03:29 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void	ft_init_len_nl(t_game *g)
 		g->map.nl++;
 		free(str);
 	}
+	ft_check_map_size(g->map.nl);
 	close(fd);
 }
 
@@ -82,4 +83,11 @@ void	ft_parsing_map(t_game *g)
 		ft_error(fd, NULL, NULL, ERR_PATH);
 	ft_parsing_map_norm(fd, g);
 	close(fd);
+}
+
+void	ft_check_map_size(int size)
+{
+	if (size > 11)
+		ft_error(-1, NULL, NULL, ERR_TOO_BIG);
+	return ;
 }

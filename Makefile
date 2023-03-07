@@ -6,7 +6,7 @@
 #    By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/08 16:13:35 by fgeorgea          #+#    #+#              #
-#    Updated: 2023/03/07 13:50:13 by fgeorgea         ###   ########.fr        #
+#    Updated: 2023/03/07 15:04:45 by fgeorgea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,6 +58,6 @@ fclean:	clean
 re: fclean all
 
 norm: 
-	@norminette includes/libft && norminette srcs/
+	@norminette -R CheckDefine includes/libft && norminette -R CheckDefine srcs/
 
 .PHONY: all clean fclean re norm

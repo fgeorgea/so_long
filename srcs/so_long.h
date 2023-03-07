@@ -6,7 +6,7 @@
 /*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 15:32:42 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/03/07 13:48:15 by fgeorgea         ###   ########.fr       */
+/*   Updated: 2023/03/07 15:03:07 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@
 # define ERR_MLX_WIN "mlx_new_window error\n"
 # define ERR_MEMORY "No enough memory\n"
 # define ERR_EMPTY_MAP "The map is empty\n"
+# define ERR_TOO_BIG "The map is too big\n"
 
 /*****************************************************************/
 /*							STRUCTS								 */
@@ -115,6 +116,7 @@ void	ft_free_tab(char *tab1, char **tab2);
 // PARSING.C
 void	ft_init_len_nl(t_game *g);
 void	ft_parsing_map(t_game *g);
+void	ft_check_map_size(int size);
 
 //MAP_UTILS.C
 void	ft_check_map(t_game *g);

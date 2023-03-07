@@ -6,7 +6,7 @@
 /*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 12:24:01 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/03/06 16:15:15 by fgeorgea         ###   ########.fr       */
+/*   Updated: 2023/03/07 14:18:46 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,9 +75,7 @@ void	ft_movement(int key, t_game *g)
 	if (g->map.map[g->player.pos_y][g->player.pos_x] ==
 		g->map.map[g->check.exit_y][g->check.exit_x])
 			g->player.char_staged = 'E';
-	if (key == KEY_ESC)
-		exit(EXIT_SUCCESS);
-	else if (g->map.map[g->player.pos_y - 1][g->player.pos_x] != '1'
+	if (g->map.map[g->player.pos_y - 1][g->player.pos_x] != '1'
 			&& (key == KEY_UP))
 		ft_move_y('U', g);
 	else if (g->map.map[g->player.pos_y + 1][g->player.pos_x] != '1'

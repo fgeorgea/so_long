@@ -6,7 +6,7 @@
 /*   By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 15:53:46 by fgeorgea          #+#    #+#             */
-/*   Updated: 2023/03/06 16:15:56 by fgeorgea         ###   ########.fr       */
+/*   Updated: 2023/03/07 14:16:38 by fgeorgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	key_pressed(int key, t_game *g)
 		ft_clear_imgs(g);
 		ft_error(-1, NULL, g->map.map, ERR_MEMORY);
 	}
-	mlx_string_put(g->mlx, g->mlx_win, g->w_width - 50, 10, 0xFFFFFF, move);
+	mlx_string_put(g->mlx, g->mlx_win, g->w_width - 50, 15, 0xFFFFFF, move);
 	if (g->player.move < 2)
 		ft_putstr_fd("Step : ", 1);
 	else
