@@ -6,7 +6,7 @@
 #    By: fgeorgea <fgeorgea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/08 16:13:35 by fgeorgea          #+#    #+#              #
-#    Updated: 2023/03/07 17:11:21 by fgeorgea         ###   ########.fr        #
+#    Updated: 2023/04/27 15:28:33 by fgeorgea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,12 +39,12 @@ COMPILE = gcc $(CFLAGS) -o $(NAME) -Iincludes/lib -Iincludes/mlx -Lincludes/mlx 
 
 all: $(NAME)
 
-libft : 
-	@$(DEPENDS)
-	@$(MLX)
+$(libft) : 
+	$(DEPENDS)
+	$(MLX)
 
-$(NAME): libft $(OBJ)
-	@$(COMPILE) $(OBJ)
+$(NAME): $(libft) $(OBJ)
+	$(COMPILE) $(OBJ)
 
 clean:
 	$(REMOVE) $(OBJ) 
